@@ -15,7 +15,14 @@
 <body>
     <!-- Aquí va todo el contenido visible -->
     <header> <!-- Encabezado de la página. La zona de arriba -->
-        <h2>Devjobs</h2> <!-- Título puede ir de 1 a 6 -->
+        <h1><!-- Título puede ir de 1 a 6 -->
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          Devjobs
+        </h1> 
         <nav> <!-- Barra de navegación principal -->
             <!-- Las etiquetas <a> son enlaces
               Por defecto se abren en la misma pestaña que estamos (target="_self"). Si se añade target="_blank" se abre en unueva pestaña
@@ -50,7 +57,8 @@
             <!--Los forms es la manera de habilitar inputs del usuario-->
             <form role="search">
               <div>
-                <!-- SVG (Scalable Vector Graphics) es un formato de imagen vectorial dibujada. Faciles de escalar y modificar. Los pillo de https://tabler.io/icons-->
+                <!-- SVG (Scalable Vector Graphics) es un formato de imagen vectorial dibujada. Faciles de escalar y modificar. Los pillo de https://tabler.io/icons 
+                 Se pueden introducir tanto como imagen (img) como directamente (inline). Al usar currentColor en atributos de color indicamos que queremos que el color se herede de CSS-->
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="14"  height="14"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
                 <!-- Los formullarios tienen muchos tipos de input elegidos desde type
                     Podemos meter un placeholder de texto. Al añadir required obligo a que se rellene antes de pulsar
