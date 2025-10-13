@@ -21,6 +21,7 @@ de nuestra págui */
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
   --text-muted: #94a3b8;
+  --text-nav-selected: #567094;
   --border: rgba(255, 255, 255, 0.1);
   --card-bg: #1e293b;
   --shadow: rgba(0, 0, 0, 0.3);
@@ -127,9 +128,14 @@ nav {
     transition: color 0.2s;
     font-weight: 500;
 
-    &:hover, &:focus {
+    &:hover, &:focus{
       color: var(--primary);
       outline: none;
+    }
+    &.active {
+      color: var(--text-nav-selected);
+      font-weight: 800;
+      pointer-events: none; /* Hace que no se pueda clicar */
     }
   }
 }

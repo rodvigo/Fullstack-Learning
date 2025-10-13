@@ -17,9 +17,21 @@
     <header> <!-- Encabezado de la página. La zona de arriba -->
         <h2>Devjobs</h2> <!-- Título puede ir de 1 a 6 -->
         <nav> <!-- Barra de navegación principal -->
-            <!-- Las etiquetas <a> son enlaces -->
-            <a href="/">Inicio</a> 
-            <a href="empleos.html">Empleos</a>
+            <!-- Las etiquetas <a> son enlaces
+              Por defecto se abren en la misma pestaña que estamos (target="_self"). Si se añade target="_blank" se abre en unueva pestaña
+              Además por seguridad si se usa blank conviene añadir rel="noopener noreferrer" (aunque algunos navegadores lo añaden por defecto)
+              noopener: previene que la nueva página tenga acceso al objeto window.opener, mejorando la seguridad.
+              noreferrer: previene que se envíe la información del referente (la URL de la página actual) a la nueva página. 
+              Los enlaces pueden ser absolutos (<a href="https://www.wikipedia.com">) o relativos como los de abajo
+              También pueden mandar a secciones de la misma página con "#id-sección". Para ello la sección debe de tener atributo id
+              Hay más tipos:
+                <a href="mailto:contacto@ejemplo.com?subject=Titulodelmail&body=Mensaje pre escrito"> Para enviar emails
+                <a href="tel:+34123456789" Para enlazar como teléfono
+                <a href="documento.pdf" download="mi-documento.pdf"> Para descargar documentos en lugar de ir a ellos
+              También se puede modificar el estilo de un enlace en CSS (hover, visited cuando ya clicado, active en el momento que se pulsa, etc)
+              Por otro lado están los atrivutos aria (aria-label, etc) para accesibilidad de lectores de pantalla y se recomienda indicar cuando es un enlace externo -->
+            <a href="index.html" target="_self" class="active">Inicio</a> 
+            <a href="empleos.html" target="_self">Empleos</a>
             <a href="#">Sobre nosotros</a>
             <a href="#">Contacto</a>
         </nav>
@@ -30,7 +42,7 @@
         </div>
     </header>
 
-    <main> <!-- Contenido principal de la página -->
+    <main> <!-- Contenido principal de la página. El resto de cosas podrían copiarse entre páginas (con cambios mínimos)siendo sólo el main lo diferente -->
         <section> <!-- Las secciones sirven para dividir el contenido en partes -->
             <h1>Encuentra el trabajo de tus sueños</h1> <!-- Título principal de la página -->
             <p>Únete a la comunidad más grande de desarrolladores del mundo y encuentra un nuevo reto</p> <!-- P de párrafos -->
