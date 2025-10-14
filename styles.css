@@ -32,12 +32,6 @@ de nuestra págui */
 
 
 
-
-
-
-
-
-
 @font-face {
   font-family: 'Inter Variable';
   font-style: normal;
@@ -501,6 +495,12 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
       pointer-events: none;
     }
   }
+}
+
+main > section:nth-child(2) > h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+
 }
 
 .button-apply-job {

@@ -5,7 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Listado con empleos y fltros para encontrar el trabajo de tus sueños."> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Aquí podrían ir scripts de JavaScript o en un archivo externo 
+    El type module permite usar import y export en JS además de hacer que se espere a haber parseado todo el HTML
+    El script se puede poner en head o al final del body. Si se pone al principio hay riesgo de que el script se ejecute antes de que el HTML esté cargado 
+    Entonces no podría encontrar IDs y demás y fallaría. Se puede solucionar usando defer(viejo) o type="module" (moderno).
+    También sirve el comando async pero no se recomienda.
+    Lo más recomendable será ponerlo en un fichero aparte igual que el CSS -->
+    <script defer src="./script.js"></script>
 </head> 
 
 <body>
@@ -55,6 +62,7 @@
                 </div>
 
                 <div class="search-filters">
+                    <!-- Las ID son identificadores únicos para un elemento. Luego en CSS se identifican con # -->
                     <select name="technology" id="filter-technology">
                         <option value="">Tecnología</option>
                         <option value="javascript">JavaScript</option>
@@ -85,7 +93,7 @@
         </section>
 
         <section>
-            <h2>Resultados de búsqueda</h2>
+            <h2 style="text-align: center;  margin-bottom: 1rem">Resultados de búsqueda</h2>
 
             <div class="jobs-listings">
                 <article class="job-listing-card">
