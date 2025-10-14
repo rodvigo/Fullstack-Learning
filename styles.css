@@ -48,14 +48,6 @@ de nuestra págui */
 }
 
 
-
-
-
-
-
-
-
-
 body {
   font-family: system-ui;
   background-color: var(--background);
@@ -65,18 +57,6 @@ body {
   flex-direction: column;
   line-height: 1.6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Títulos principales */
 h1 {
@@ -466,7 +446,7 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
     border-bottom: 1px solid rgba(255, 255, 255, .3);
     margin: 0;
 
-    display: flex;
+    display: flex; /* Convierte el layout en  un Flexbox para que el botón esté a la derecha*/
     align-items: start;
     gap: 1rem;
 
@@ -483,14 +463,18 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
        para no estar duplicado con el de la caja/artículo en el que está*/
       border-bottom: none;
     }
+    &.job-listing-card {
+      padding: 1rem;
+    }
   }
 }
 
 .pagination {
-  display: flex;
+  display: flex; /* Convierte el layout en caja flexible. Los elementos se ponen en fila */
   justify-content: center;
   gap: 0.5rem;
-  margin-block: 2rem;
+  margin-block: 2rem; /* Margen inteligente de arriba y abajo. Se adapta a otros tipos de escritura
+  el contrario sería margin-inline para izquierda y derecha. Tambíen sirven existe padding-block y padding-inline*/
 
   a {
     display: flex;
@@ -498,10 +482,10 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
     justify-content: center;
     width: 2.5rem;
     height: 2.5rem;
-    text-decoration: none;
+    text-decoration: none; /* Quita el subrayado típico de un enlace*/
     color: var(--text-muted);
     border-radius: 0.375rem;
-    transition: all .3s;
+    transition: all .3s; /* Transición suave para todos los cambios de propiedad como un hover */
 
     &:hover, &:focus {
       background-color: #fff;
