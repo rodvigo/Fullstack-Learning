@@ -5,6 +5,9 @@
      * Cambia la manera de introducir el filtro en función del comando de arriba elegido: getElementsByClassName("button-apply-job");
      * querylesector devuelve solo el primer elemento y null si no enceuntra nada.
      * Esto se puede combar con if para comprobar si existe o no. if (boton != null) { ... }
+     * Otra manera de aplicarlo es mediante optional chaining, esto es añadir ? tras el nombre de la variable
+     *  y antes de una propiedad o método:
+     * boton?.addEventListener(...) que solo ejecuta el método si boton no es null.
      * querySelectorAll devuelve una lista de nodos (NodeList) y una lista vacía si no encuentra nada.
      */
 
@@ -42,7 +45,7 @@ const jobsListingSection = document.querySelector('.jobs-listings');
 jobsListingSection.addEventListener('click', function(event) {
     //event.target nos da el elemento que ha sido clickado
     const element = event.target;
-    // Si se clicka en un botón. Esta propagación o bubbling se puede evitar con event.stopPropagation()
+    // Si se clicka en un botón. Esta propagación o bubbling se puede evitar con event.stopPropagation() pero es peligroso
     if (element.classList.contains('button-apply-job')) { 
         element.textContent='¡Aplicado!'; 
         element.disabled=true;
