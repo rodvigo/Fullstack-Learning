@@ -49,9 +49,28 @@ jobsListingSection.addEventListener('click', function(event) {
     if (element.classList.contains('button-apply-job')) { 
         element.textContent='¡Aplicado!'; 
         element.disabled=true;
-        element.classList.add('is-applied');
+        element.classList.add('is-applied'); 
     }
 })
    
-   
-   console.log("Hola, mundo"); //Esto pasa siempore
+const filter = document.querySelector('#filter-location'); 
+/*Para detectar cambios en un select usamos el evento 'change'. Ojo que no es lo mismo el valo que el nombre de la opcion
+* Otro tipo de eventos son 'input' para modificaciones de texto (añadir o borrar), 'submit' para formularios
+* blur para cuando un elemento pierde el foco y focus para cuando lo gana (el foco es cuando está seleccionado)
+*/
+filter.addEventListener('change',()=> {
+    console.log(filter.value);
+})
+
+/**
+* Por defecto un formulario siempre se envia y recarga la página al hacer submit (o darle a enter, por ejemplo).
+* Si no se evita de otra manera, esa info del formulario se enviará a la URL indicada en el action del formulario (o a la misma página si no hay action)
+* Para evitar esto usamos event.preventDefault()que vita el comportamiento por defecto.
+*/
+const searchForm = document.querySelector('#empleos-search-form');
+searchForm.addEventListener('submit',(event) => {
+    event.preventDefault(); //De esta manera no se recarga la página ni se envían los datos, etc
+    // ... Cosas de la búsqueda
+    console.log('submit');
+});
+   console.log("Hola, mundo"); //Esto pasa siempre
