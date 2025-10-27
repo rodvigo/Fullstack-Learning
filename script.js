@@ -66,11 +66,16 @@ filter.addEventListener('change',()=> {
     jobs.forEach((job) => {
         //const modalidad = job.getAttribute('data-modalidad');  Alternativa para acceder a los data-atributos
         const modalidad = job.dataset.modalidad; //Manera nativa de accerder a los data-atributos
-        if (filter.value === '' || filter.value === modalidad) {
-            job.style.display = 'flex'; //Mostramos la oferta
+        const isShown = filter.value === '' || filter.value === modalidad // Ponemos la condición antes para mayor claridad
+        /*Manera típica de hacer el filtro
+            if (filter.value === '' || filter.value === modalidad) {
+            //job.style.display = 'flex'; --Mostramos la oferta. Mejor hacerlo usando clases CSS
+            job.classList.remove('is-hidden');
         } else {
-            job.style.display = 'none'; //Ocultamos la oferta
-        }
+            //job.style.display = 'none'; --Ocultamos la oferta. Mejor hacerlo usando clases CSS
+            job.classList.add('is-hidden');
+        }*/
+        job.classList.toggle('is-hidden', !isShown); // Alternativa usando toggle más elegante. Toggle añade o quita la clase según el segundo parámetro sea true o false
     }); 
 })
 

@@ -62,14 +62,24 @@
                 </div>
 
                 <div class="search-filters">
-                    <!-- Las ID son identificadores únicos para un elemento. Luego en CSS se identifican con # -->
+                    <!-- Las ID son identificadores únicos para un elemento. Luego en CSS se identifican con # 
+                     El select se puede profundizar bastante. Por ejemplo agruparlos con optgroup, añadir líneas con hr, etc-->
                     <select name="technology" id="filter-technology">
-                        <option value="">Tecnología</option>
+                      <option value="">Tecnología</option>
+                      <optgroup label="Tecnologías populares">
                         <option value="javascript">JavaScript</option>
                         <option value="python">Python</option>
-                        <option value="java">Java</option>
                         <option value="react">React</option>
                         <option value="nodejs">Node.js</option>
+                      </optgroup>
+                      <option value="java">Java</option>
+                      <hr />
+                      <option value="csharp">C#</option>
+                      <option value="c">C</option>
+                      <option value="c++">C++</option>
+                      <hr />
+                      <option value="ruby">Ruby</option>
+                      <option value="php">PHP</option>
                     </select>
 
                     <select name="location" id="filter-location">

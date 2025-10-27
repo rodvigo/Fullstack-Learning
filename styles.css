@@ -462,7 +462,7 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
   border: 1px solid rgba(255, 255, 255, .3);
   border-radius: 1rem;
 
-  article {
+  .job-listing-card{
     background: none;
     box-shadow: none;
     border-radius: 0;
@@ -472,6 +472,10 @@ Además si no se concreta la clase puede aplicarse a elementos diferentes que te
     display: flex; /* Convierte el layout en  un Flexbox para que el botón esté a la derecha*/
     align-items: start;
     gap: 1rem;
+
+    &.is-hidden {
+      display: none;
+    }
 
     small {
       font-size: .875rem;
