@@ -76,6 +76,21 @@ filter.addEventListener('change',()=> {
             job.classList.add('is-hidden');
         }*/
         job.classList.toggle('is-hidden', !isShown); // Alternativa usando toggle más elegante. Toggle añade o quita la clase según el segundo parámetro sea true o false
+    /*Otros méttods utiles de classList:
+    // Verificar si un elemento tiene una clase
+    if (job.classList.contains('is-hidden')) {
+      console.log('El elemento está oculto')
+    }
+
+    // Reemplazar una clase por otra
+    job.classList.replace('is-hidden', 'is-visible')
+
+    // Agregar múltiples clases a la vez
+    job.classList.add('featured', 'highlighted', 'premium')
+
+    // Quitar múltiples clases a la vez
+    job.classList.remove('featured', 'highlighted', 'premium'
+    */ 
     }); 
 })
 
