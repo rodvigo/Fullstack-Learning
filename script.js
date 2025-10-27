@@ -54,13 +54,26 @@ jobsListingSection.addEventListener('click', function(event) {
 })
    
 const filter = document.querySelector('#filter-location'); 
+const jobs = document.querySelectorAll('.job-listing-card');
 /*Para detectar cambios en un select usamos el evento 'change'. Ojo que no es lo mismo el valo que el nombre de la opcion
 * Otro tipo de eventos son 'input' para modificaciones de texto (añadir o borrar), 'submit' para formularios
 * blur para cuando un elemento pierde el foco y focus para cuando lo gana (el foco es cuando está seleccionado)
+*keydown y keyup para detectar teclas pulsadas y soltadas también son comunes
+*Luego se puede comprobar  event.key para ver qué tecla es y con event."teclaKey"( event.ctrlKey, event.shiftKey...) si se pulsa una en concreto(modificadoras solo).
 */
 filter.addEventListener('change',()=> {
     console.log(filter.value);
+    jobs.forEach((job) => {
+        //const modalidad = job.getAttribute('data-modalidad');  Alternativa para acceder a los data-atributos
+        const modalidad = job.dataset.modalidad; //Manera nativa de accerder a los data-atributos
+        if (filter.value === '' || filter.value === modalidad) {
+            job.style.display = 'flex'; //Mostramos la oferta
+        } else {
+            job.style.display = 'none'; //Ocultamos la oferta
+        }
+    }); 
 })
+
 
 /**
 * Por defecto un formulario siempre se envia y recarga la página al hacer submit (o darle a enter, por ejemplo).
@@ -71,6 +84,6 @@ const searchForm = document.querySelector('#empleos-search-form');
 searchForm.addEventListener('submit',(event) => {
     event.preventDefault(); //De esta manera no se recarga la página ni se envían los datos, etc
     // ... Cosas de la búsqueda
-    console.log('submit');
 });
+
    console.log("Hola, mundo"); //Esto pasa siempre
